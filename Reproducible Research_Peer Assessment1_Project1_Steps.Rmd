@@ -1,6 +1,7 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
 Author: Alfred Homere NGANDAM MFONDOUM 
+Date: May, 2016
   html_document:Reproducible_Research_Project1
     keep_md: true
 ---
