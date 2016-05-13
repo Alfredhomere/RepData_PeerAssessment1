@@ -65,7 +65,7 @@ imputed_data[as.character(imputed_data$date) == "2012-10-01", 1] <- 0
 steps_by_day_i <- aggregate(steps ~ date, imputed_data, sum)
 hist(steps_by_day_i$steps, main = paste("Total Steps Each Day"), col="blue", xlab="Number of Steps")
 
-#####Create Histogram to show difference. 
+##### Create Histogram to show difference. 
 hist(steps_by_day$steps, main = paste("Total Steps Each Day"), col="red", xlab="Number of Steps", add=T)
 legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
 
