@@ -12,9 +12,9 @@ This is the first project of the fith course of Data Analyst Especiallyzation in
 
 The purpose of this project has been divided in three parts:
 
-loading and preprocessing data
-imputing missing values
-interpreting data to answer research questions
+* loading and preprocessing data
+* imputing missing values
+* interpreting data to answer research questions
 # Loading and Preprocessing Data
 ```{r}
 if(!file.exists("getdata-projectfiles-UCI HAR Dataset.zip")) {
