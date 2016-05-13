@@ -5,16 +5,17 @@
 
 ### Context
   
-### This is the first project of the fith course of Data Analyst Especiallyzation intitle"Reproducible Research". Learners have to answer some questions by using data collected from Fitbit.
+This is the first project of the fith course of Data Analyst Especiallyzation intitle"Reproducible Research". Learners have to answer some questions by using data collected from Fitbit.
 
 ### Purpose
 
-### The purpose of this project has been divided in three parts:
+The purpose of this project has been divided in three parts:
   
-### loading and preprocessing data
-### imputing missing values
-### interpreting data to answer research questions
-### Loading and Preprocessing Data
+* loading and preprocessing data
+* imputing missing values
+* interpreting data to answer research questions
+
+##### Loading and Preprocessing Data
 
 if(!file.exists("getdata-projectfiles-UCI HAR Dataset.zip")) {
   temp <- tempfile()
@@ -25,7 +26,7 @@ if(!file.exists("getdata-projectfiles-UCI HAR Dataset.zip")) {
 
 data <- read.csv("activity.csv")
 
-### What is mean total number of steps taken per day?
+##### What is mean total number of steps taken per day?
 
  Sum steps by day, create Histogram, and calculate mean and median.
 
@@ -34,13 +35,13 @@ hist(steps_by_day$steps, main = paste("Total Steps Each Day"), col="blue", xlab=
 rmean <- mean(steps_by_day$steps)
 rmedian <- median(steps_by_day$steps)
   
-### The mean is r rmean and the median is r rmedian.
+* The mean is r rmean and the median is r rmedian.
 
-### What is the average daily activity pattern?
+##### What is the average daily activity pattern?
 
-### average steps for each interval for all days.
-### Plot the Average Number Steps per Day by Interval.
-### Find interval with most average steps.
+* average steps for each interval for all days
+* Plot the Average Number Steps per Day by Interval.
+* Find interval with most average steps.
 
 steps_by_interval <- aggregate(steps ~ interval, data, mean)
 
@@ -48,37 +49,37 @@ plot(steps_by_interval$interval,steps_by_interval$steps, type="l", xlab="Interva
 
 max_interval <- steps_by_interval[which.max(steps_by_interval$steps),1]
 
-### Impute missing values. Compare imputed to non-imputed data.
+##### Impute missing values. Compare imputed to non-imputed data.
 
-### Missing data needed to be imputed. Only a simple imputation approach was required for this assignment. Missing values were imputed by inserting the average for each interval. Thus, if interval 10 was missing on 10-02-2012, the average for that interval for all days (0.1320755), replaced the NA.
+Missing data needed to be imputed. Only a simple imputation approach was required for this assignment. Missing values were imputed by inserting the average for each interval. Thus, if interval 10 was missing on 10-02-2012, the average for that interval for all days (0.1320755), replaced the NA.
 
 incomplete <- sum(!complete.cases(data))
 imputed_data <- transform(data, steps = ifelse(is.na(data$steps), steps_by_interval$steps[match(data$interval, steps_by_interval$interval)], data$steps))
 
-### Zeroes were imputed for 10-01-2012 because it was the first day and would have been over 9,000 steps higher than the following day, which had only 126 steps. NAs then were assumed to be zeros to fit the rising trend of the data.
+Zeroes were imputed for 10-01-2012 because it was the first day and would have been over 9,000 steps higher than the following day, which had only 126 steps. NAs then were assumed to be zeros to fit the rising trend of the data.
 
 imputed_data[as.character(imputed_data$date) == "2012-10-01", 1] <- 0
 
-### Recount total steps by day and create Histogram.
+##### Recount total steps by day and create Histogram.
 
 steps_by_day_i <- aggregate(steps ~ date, imputed_data, sum)
 hist(steps_by_day_i$steps, main = paste("Total Steps Each Day"), col="blue", xlab="Number of Steps")
 
-### Create Histogram to show difference. 
+#####Create Histogram to show difference. 
 hist(steps_by_day$steps, main = paste("Total Steps Each Day"), col="red", xlab="Number of Steps", add=T)
 legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
 
-### Calculate new mean and median for imputed data.
+##### Calculate new mean and median for imputed data.
 
 rmean.i <- mean(steps_by_day_i$steps)
 rmedian.i <- median(steps_by_day_i$steps)
 
-### Calculate difference between imputed and non-imputed data.
+##### Calculate difference between imputed and non-imputed data.
 
 mean_diff <- rmean.i - rmean
 med_diff <- rmedian.i - rmedian
 
-### Calculate total difference.
+##### Calculate total difference.
 
 total_diff <- sum(steps_by_day_i$steps) - sum(steps_by_day$steps)
 weekdays <- c("Monday", "Tuesday", "Wednesday", "Thursday", 
@@ -90,7 +91,8 @@ weekdays <- c("Monday", "Tuesday", "Wednesday", "Thursday",
  The difference between total number of steps between imputed and non-imputed data is r total_diff. Thus, there were r total_diff more steps in the imputed data.
  Are there differences in activity patterns between weekdays and weekends?
 
- Created a plot to compare and contrast number of steps between the week and weekend. There is a higher peak earlier on weekdays, and more overall activity on weekends.
+ ##### Create a plot to compare and contrast number of steps between the week and weekend. 
+ There is a higher peak earlier on weekdays, and more overall activity on weekends.
 
 weekdays <- c("Monday", "Tuesday", "Wednesday", "Thursday", 
               "Friday")
