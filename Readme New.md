@@ -89,8 +89,12 @@ weekdays <- c("Monday", "Tuesday", "Wednesday", "Thursday",
  The difference between the non-imputed mean and imputed mean is r mean_diff
  The difference between the non-imputed mean and imputed mean is r med_diff
  The difference between total number of steps between imputed and non-imputed data is r total_diff. Thus, there were r total_diff more steps in the imputed data.
+
+
+##### Are there differences in activity patterns between weekdays and weekends?
  
- ##### Are there differences in activity patterns between weekdays and weekends? Create plot to compare and contrast number of steps between the week and weekend.
+
+Create plot to compare and contrast number of steps between the week and weekend.
  
 There is a higher peak earlier on weekdays, and more overall activity on weekends.
 
