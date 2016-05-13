@@ -1,11 +1,33 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-Author: Alfred Homere NGANDAM MFONDOUM 
-Date: May, 2016
-  html_document:Reproducible_Research_Project1
-    keep_md: true
+# title: "Reproducible Research: Peer Assessment 1"
+# Author: Alfred Homere NGANDAM MFONDOUM 
+# Date: May, 2016
 ---
+# Context
 
+This is the first project for fifth course of the Data Analyst especialiazation intitled "Reproducible Research". The purpose of the project has been to answer some questions using data collected from a FitBit.
+
+# Purpose 
+
+The purpose of this project is divided in three orders as follow:
+
+* loading and preprocessing data
+* imputing missing values
+* interpreting data to answer research questions
+# Data
+
+The data for this assignment was downloaded from the course web site:
+
+Dataset: Activity monitoring data [52K]
+The variables included in this dataset are:
+
+steps: Number of steps taking in a 5-minute interval (missing values are coded as NA)
+
+date: The date on which the measurement was taken in YYYY-MM-DD format
+
+interval: Identifier for the 5-minute interval in which measurement was taken
+
+The dataset is stored in a comma-separated-value (CSV) file and there are a total of 17,568 observations in this dataset.
 
 ## Loading and preprocessing the data
 ```{r}
