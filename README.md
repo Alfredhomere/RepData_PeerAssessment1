@@ -1,7 +1,6 @@
-# RepData_PeerAssessment1:FitBit Data Analysis
-
-## Alfred Homere NGANDAM MFONDOUM
-## May, 2016
+RepData_PeerAssessment1:FitBit Data Analysis
+Alfred Homere NGANDAM MFONDOUM
+May, 2016
 
 ## Context
 This is the first project of the fith course of Data Analyst Especiallyzation intitle"Reproducible Research". Learners have to answer some questions by using data collected from [Fitbit](http://www.fitbit.com).
