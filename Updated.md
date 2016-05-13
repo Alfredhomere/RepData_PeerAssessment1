@@ -1,10 +1,9 @@
 
-title: "Reproducible Research_Peer Assessment1_Project1_Steps"
-author: "Alfred Homere Ngandam Mfomdoum"
-date: "May 13, 2016"
+ * title: "Reproducible Research_Peer Assessment1_Project1_Steps"
+ * author: "Alfred Homere Ngandam Mfomdoum"
+ * date: "May 13, 2016"
 
-
-  ### Context
+### Context
   
 ### This is the first project of the fith course of Data Analyst Especiallyzation intitle"Reproducible Research". Learners have to answer some questions by using data collected from Fitbit.
 
@@ -28,7 +27,7 @@ data <- read.csv("activity.csv")
 
 ### What is mean total number of steps taken per day?
 
-#### Sum steps by day, create Histogram, and calculate mean and median.
+ Sum steps by day, create Histogram, and calculate mean and median.
 
 steps_by_day <- aggregate(steps ~ date, data, sum)
 hist(steps_by_day$steps, main = paste("Total Steps Each Day"), col="blue", xlab="Number of Steps")
